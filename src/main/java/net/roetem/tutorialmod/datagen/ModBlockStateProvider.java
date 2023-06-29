@@ -23,6 +23,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
         blockWithItem(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
         blockWithItem(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
+        leavesBlockWithItem(ModBlocks.EBONY_LEAVES);
 
         logBlock(((RotatedPillarBlock) ModBlocks.EBONY_LOG.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.EBONY_WOOD.get(),
@@ -35,7 +36,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"));
 
         blockWithItem(ModBlocks.EBONY_PLANKS);
-        blockWithItem(ModBlocks.EBONY_LEAVES);
         saplingBlock(ModBlocks.EBONY_SAPLING);
 
         simpleBlockItem(ModBlocks.EBONY_LOG.get(),
@@ -56,5 +56,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(blockRegistryObject.get(),
                 models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
                         blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void leavesBlockWithItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().cubeAll(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                        blockTexture(blockRegistryObject.get())).renderType("translucent"));
     }
 }

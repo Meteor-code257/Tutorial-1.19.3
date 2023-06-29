@@ -60,20 +60,16 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> EBONY_LOG =
             registerBlock("ebony_log", () -> new ModFlammableRotatedPillarBlock(
-                    BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
-                    .strength(5f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(5f)));
     public static final RegistryObject<Block> EBONY_WOOD =
             registerBlock("ebony_wood", () -> new ModFlammableRotatedPillarBlock(
-                    BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
-                    .strength(5f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(5f)));
     public static final RegistryObject<Block> STRIPPED_EBONY_LOG =
             registerBlock("stripped_ebony_log", () -> new ModFlammableRotatedPillarBlock(
-                    BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
-                    .strength(5f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(5f)));
     public static final RegistryObject<Block> STRIPPED_EBONY_WOOD =
             registerBlock("stripped_ebony_wood", () -> new ModFlammableRotatedPillarBlock(
-                    BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
-                    .strength(5f).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(5f)));
 
     public static final RegistryObject<Block> EBONY_PLANKS =
             registerBlock("ebony_planks", () -> new Block(
