@@ -23,6 +23,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
         blockWithItem(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
         blockWithItem(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
+        blockWithItem(ModBlocks.EBONY_PLANKS);
         leavesBlockWithItem(ModBlocks.EBONY_LEAVES);
 
         logBlock(((RotatedPillarBlock) ModBlocks.EBONY_LOG.get()));
@@ -34,8 +35,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_EBONY_WOOD.get(),
                 new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"),
                 new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"));
-
-        blockWithItem(ModBlocks.EBONY_PLANKS);
         saplingBlock(ModBlocks.EBONY_SAPLING);
 
         simpleBlockItem(ModBlocks.EBONY_LOG.get(),
