@@ -68,3 +68,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magn
     versionRange="[1.19.3,1.20)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.tutorialmod]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.1.2,)"
+    ordering="NONE"
+    side="BOTH"

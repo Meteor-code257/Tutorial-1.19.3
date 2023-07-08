@@ -1,6 +1,7 @@
 package net.roetem.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,6 +13,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.roetem.tutorialmod.block.ModBlocks;
+import net.roetem.tutorialmod.entity.ModEntities;
+import net.roetem.tutorialmod.entity.client.TigerRenderer;
 import net.roetem.tutorialmod.item.ModItems;
 import net.roetem.tutorialmod.item.ModTabs;
 import org.slf4j.Logger;
@@ -26,6 +29,7 @@ public class TutorialMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -41,6 +45,7 @@ public class TutorialMod {
         if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
+            event.accept(ModItems.TIGER_SPAWN_EGG);
         }
 
         if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
@@ -65,6 +70,7 @@ public class TutorialMod {
         if (event.getTab() == ModTabs.TUTORIAL_TAB) {
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
+            event.accept(ModItems.TIGER_SPAWN_EGG);
             event.accept(ModBlocks.BLACK_OPAL_BLOCK);
             event.accept(ModBlocks.BLACK_OPAL_ORE);
             event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
@@ -85,7 +91,7 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.TIGER.get(), TigerRenderer::new);
         }
     }
 }
